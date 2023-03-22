@@ -16,10 +16,10 @@ function IndividualExperienceInfo({info}) {
     const {position, company, city, start, end} = info;
     return(
         <div>
-            <div id="duration">{start} - {end}</div>
+            <div id="duration">{ start || end ? start + "-" + end : undefined}</div>
             <div id="textInfo">
                 <h3>{position}</h3>
-                <h4>{company}, {city}</h4>
+                <h4>{company || city ? company + ", " + city : undefined}</h4>
             </div>
         </div>
     )

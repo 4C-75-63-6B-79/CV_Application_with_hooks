@@ -39,6 +39,46 @@ function makeInitialInfo() {
   return initInfo;
 }
 
+function loadExampleData() {
+  const exampleInfo = {
+    personalInfo: {
+      firstName: 'Betty',
+      lastName: 'Luke',
+      address: '10880 Malibu Point, 90265',
+      email: 'realmailaddress@googlemail.com',
+      phoneNo: '9007007007',
+    },
+    educationInfo: {
+      education0: {
+        degree: 'Bachelor\'s',
+        school: 'The Best School In the World',
+        city: 'Madripoor',
+        subject: 'Adventure Education',
+        start: 'May, 2015',
+        end: 'April, 2019'
+      },
+      education1: {
+        degree: 'Master\'s',
+        school: 'The Second Best School In the World',
+        city: 'Madripoor',
+        subject: 'Cannabis Biology and Chemistry',
+        start: 'July, 2019',
+        end: 'April, 2021'
+      }
+    },
+    experienceInfo: {
+      experience0: {
+        position: "Postion",
+        company: "Company Name",
+        city: "City",
+        start: "May, 2022",
+        end: "December, 2022",
+      }
+    }
+  }
+  return exampleInfo;
+}
+
 function App() {
 
   const [info, setInfo] = useState(makeInitialInfo);
@@ -66,8 +106,17 @@ function App() {
     });
   }
 
-  function updateExperienceInfo() {
-    
+  function updateExperienceInfo(index, attributeName, attributeValue) {
+    setInfo({
+      ...info,
+      experienceInfo: {
+        ...info.experienceInfo,
+        [index]: {
+          ...info.experienceInfo[index],
+          [attributeName]: attributeValue
+        }
+      }
+    });
   }
 
   function addButtonClicked(category) {
@@ -117,6 +166,14 @@ function App() {
     });
   }
 
+  function loadExampleButtonClicked() {
+    setInfo(loadExampleData());
+  }
+
+  function resetButtonClicked() {
+    setInfo(makeInitialInfo());
+  }
+
   return (
     <div className="App">
       <h1>CV Creator</h1>
@@ -135,6 +192,8 @@ function App() {
           <ExperienceInfo info={info.experienceInfo} onInputChange={updateExperienceInfo} onDeleteButtonClick={deleteButtonClicked} />
           <button type="button" onClick={() => addButtonClicked('experience')}>Add</button>
         </fieldset>
+        <button type="button" onClick={loadExampleButtonClicked}>Load Example</button>
+        <button type="button" onClick={resetButtonClicked}>Reset</button>
       </form>
       <CV info={info}/>
     </div>
