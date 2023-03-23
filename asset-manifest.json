@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CV_Application_with_hooks%20/static/css/main.eee09b03.css",
+    "main.js": "/CV_Application_with_hooks%20/static/js/main.7e8e6f5f.js",
+    "index.html": "/CV_Application_with_hooks%20/index.html",
+    "main.eee09b03.css.map": "/CV_Application_with_hooks%20/static/css/main.eee09b03.css.map",
+    "main.7e8e6f5f.js.map": "/CV_Application_with_hooks%20/static/js/main.7e8e6f5f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eee09b03.css",
+    "static/js/main.7e8e6f5f.js"
+  ]
+}
