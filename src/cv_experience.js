@@ -15,9 +15,9 @@ export default function CVExperiencenInfo({ info }) {
 function IndividualExperienceInfo({info}) {
     const {position, company, city, start, end} = info;
     return(
-        <div>
-            <div id="duration">{ start || end ? start + "-" + end : undefined}</div>
-            <div id="textInfo">
+        <div className="info">
+            <div className="duration">{ start || end ? start + " - " + end : undefined}</div>
+            <div className="textInfo">
                 <h3>{position}</h3>
                 <h4>{company || city ? company + ", " + city : undefined}</h4>
             </div>

@@ -176,11 +176,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>CV Creator</h1>
+      <h1 id="mainAppTitle">CV Creator</h1>
       <form>
         <fieldset>
           <legend>Personal Information</legend>
-          <PersonalInfo info={info.personalInfo} onInputChange={updatePersonalInfo}/>
+          <section>
+            <PersonalInfo info={info.personalInfo} onInputChange={updatePersonalInfo}/> 
+          </section>
         </fieldset>
         <fieldset>
           <legend>Education Information</legend>
